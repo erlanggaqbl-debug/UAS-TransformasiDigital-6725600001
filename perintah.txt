@@ -1,0 +1,13 @@
+Langkah Instalasi
+
+sudo apt update
+sudo apt install rclone -y
+rclone config  # Konfigurasi koneksi ke Google Drive
+
+Contoh Perintah Backup dan Restore
+
+mkdir ~/DataPenting
+echo "Data Mahasiswa Sistem Informasi" > ~/DataPenting/mahasiswa.txt
+rclone copy ~/DataPenting akmaldrive:backup-ubuntu
+rm -rf ~/DataPenting
+rclone copy akmaldrive:backup-ubuntu ~/DataPenting
